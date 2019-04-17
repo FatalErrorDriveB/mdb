@@ -1,5 +1,3 @@
-
-
 import discord
 from discord.ext import commands
 import random
@@ -64,10 +62,11 @@ async def on_ready():
 async def on_member_join(ctx):
     channel = ctx.guild.system_channel
     if channel is not None:
-        await ctx.send(f"""Hello {ctx.author.mention} thanks for joining! For a list of bot commands use `^help`""" +
-                       f"""\nIf you'd like to introduce yourself please do so, we'd love to know a bit about you.""" +
-                       f"""\n#procrastination-station is where we all hang out, come join us and talk.""" +
-                       f"""\nLastly, please feel free to ask any question you may have.""")
+        await ctx.channel.send(
+            f"""Hello {ctx.author.mention} thanks for joining! For a list of bot commands use `^help`""" +
+            f"""\nIf you'd like to introduce yourself please do so, we'd love to know a bit about you.""" +
+            f"""\n#procrastination-station is where we all hang out, come join us and talk.""" +
+            f"""\nLastly, please feel free to ask any question you may have.""")
 
 
 # Bot status

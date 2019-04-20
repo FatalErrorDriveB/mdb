@@ -2,9 +2,8 @@ import discord
 from discord.ext import commands
 import random
 import asyncio
-from cogs.tokens import BOT_TOKEN
+from cogs.tokens import DEV_TOKEN as TOKEN
 
-TOKEN = BOT_TOKEN
 bot = commands.Bot(command_prefix='^')  # The prefix for all bot commands
 guild = discord.Guild
 colors = {

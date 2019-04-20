@@ -1,8 +1,6 @@
 from discord.ext import commands
 import discord
-from cogs.tokens import MDOC_TOKEN
-
-mdoc_id = MDOC_TOKEN
+from cogs.tokens import MDOC_TOKEN_DEV as mdoc_id
 
 
 class MDOC(commands.Cog):

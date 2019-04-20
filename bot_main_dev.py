@@ -41,7 +41,8 @@ colors = {
 initial_extensions = ['cogs.cog_learning',
                       'cogs.error_handling.error_handler',
                       'cogs.wrpg.writer_rpg',
-                      'cogs.master_doc.mdoc']
+                      'cogs.master_doc.mdoc',
+                      'cogs.wrpg.sql_database']
 
 if __name__ in '__main__':  # Loads all the Cogs and gives an error if can't load
     for extension in initial_extensions:

@@ -40,9 +40,9 @@ colors = {
 # Cog list & location
 initial_extensions = ['cogs.cog_learning',
                       'cogs.error_handling.error_handler',
+                      'cogs.wrpg.sql_database',
                       'cogs.wrpg.writer_rpg',
-                      'cogs.master_doc.mdoc',
-                      'cogs.wrpg.sql_database']
+                      'cogs.master_doc.mdoc']
 
 if __name__ in '__main__':  # Loads all the Cogs and gives an error if can't load
     for extension in initial_extensions:
@@ -84,9 +84,9 @@ async def bot_status():
 
 # Keep at end of file
 # Setting cogs for background use
-wrpg = bot.get_cog('WriterRPG')
+# wrpg = bot.get_cog('WriterRPG')
 
 # Run background task and main bot
-bot.loop.create_task(wrpg.start_battle())  # This is how this should be done for loading cog task
+# bot.loop.create_task(wrpg.start_battle())  # This is how this should be done for loading cog task
 bot.loop.create_task(bot_status())
 bot.run(TOKEN)

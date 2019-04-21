@@ -1,10 +1,8 @@
 # This file hold the main writer rpg game
-
 import random
 import copy
 from discord.ext import commands
 import asyncio
-from sql_database import profile as p
 
 
 class WriterRPG(commands.Cog):
@@ -52,8 +50,8 @@ class WriterRPG(commands.Cog):
 
     async def start_battle(self, **kwargs):
         ctx = kwargs.get('ctx', self)
-        u_profile = kwargs.get('u_profile', p.Profile())
-        e_profile = kwargs.get('e_profile', p.Profile())
+        u_profile = kwargs.get('u_profile', self.db.Profile())
+        e_profile = kwargs.get('e_profile', self.db.Profile())
         fight = kwargs.get('start_fight', False)
         time = kwargs.get('battle_time', 600)
         if not fight:
@@ -124,7 +122,8 @@ class WriterRPG(commands.Cog):
     async def create(self, ctx):
         """Creates a Writer-RPG profile if you don't have one."""
         # Add sql profile check
-        ...
+        build = self.bot.get_command('create_profile')  # Not finding the command!!!
+        await ctx.invoke(build)
 
     @commands.command()
     async def stats(self, ctx):
@@ -144,8 +143,8 @@ class WriterRPG(commands.Cog):
         strong = False
         if '*' in str(msg):
             strong = True
-        # Add sql profile load
-        #battle_lvl = int(profile.level)
+        profile = await self.db.load()
+        battle_lvl = int(profile.level)
         if not strong:
             if battle_lvl < 3:
                 battle_lvl = random.randrange((battle_lvl - 3), battle_lvl)

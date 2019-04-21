@@ -1,3 +1,6 @@
+**DO NOT USE UNTIL FINISHED!
+This branch is a experimental rebuild of the core systems. Until this warning is removed this will not run properly and will crash! Please use the Master branch if you wist to use this bot.**
+
 # mdb
 ## Master Document Bot for Discord
 
